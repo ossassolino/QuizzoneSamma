@@ -1,0 +1,27 @@
+header{
+    text-align: center;
+    font-size: 3em;
+}
+
+.risposte{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#areaQuiz{
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    right: auto;
+    top: 10%;
+}
+
+#question{
+    text-align: center;
+}
+
+footer{
+    position: absolute;
+    display: fixed;
+    top: 10%;
+}
