@@ -16,12 +16,11 @@ async function getData(){
         data.results.forEach((question)=>{
             db.push({
                 q: question.question,
-                c: question.correct_answer,
                 a: [question.correct_answer].concat(question.incorrect_answers)
             });
         });
     }
-    return db[questionNumber++];
+    return {q: db[questionNumber].q,a: db[questionNumber++].a};
 }
 
 function shuffle(array) {
@@ -37,7 +36,7 @@ function shuffle(array) {
 class Quiz{
     constructor(data){
         this.question = data.q;
-        let correct_answer = data.c;
+        let correct_answer = data.a[0];
         this.answers = shuffle(data.a);
         this.gameEnded = false;
         this.tryAnswer = function(answer){
