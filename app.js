@@ -20,7 +20,7 @@ async function getData(){
             });
         });
     }
-    return {q: db[questionNumber].q,a: db[questionNumber++].a};
+    return {q: db[questionNumber].q,a: [...db[questionNumber++].a]};
 }
 
 function shuffle(array) {
